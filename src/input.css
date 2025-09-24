@@ -1,0 +1,39 @@
+@import "tailwindcss";
+:root {
+  --primary: rgb(0, 132, 55);
+  --secondary: #a3a3a3;
+
+  --font-header: "Poppins", sans-serif;
+  --font-body: "Lato", sans-serif;
+}
+.container {
+  width: 960px;
+}
+@media only screen and (min-width: 1440px) {
+  .container {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .container {
+    width: 95%;
+  }
+}
+input.visited,
+select.visited {
+  @apply border-black;
+  @apply text-black;
+}
+.section {
+  @apply w-80 p-3 flex flex-col justify-start;
+}
+.section-name {
+  @apply mb-5 text-lg font-bold text-center;
+}
+input,
+select {
+  @apply h-10 p-1 pl-2 text-xl border-2 border-[var(--secondary)] rounded-3xl flex-1 hover:bg-[var(--secondary)]/25;
+}
+.unit {
+  @apply ml-2 text-xl flex items-center;
+}

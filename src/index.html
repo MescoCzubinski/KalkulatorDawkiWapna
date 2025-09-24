@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator dawki wapnia</title>
+    <link rel="stylesheet" href="output.css" />
+
+    <!-- fonty -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="m-0 p-0 bg-[var(--primary)]/10 flex justify-center font-[var(--font-body)]"
+  >
+    <div
+      class="m-3 bg-white rounded-3xl container flex flex-col justify-start shadow-md shadow-[var(--secondary)]"
+    >
+      <div class="m-3 flex justify-between">
+        <div
+          class="text-2xl font-[var(--font-header)] font-bold flex justify-center items-center flex-1"
+        >
+          <p>Kalkulator dawki wapnia</p>
+        </div>
+        <div class="h-full flex items-center justify-center">
+          <button
+            id="reset"
+            class="w-24 h-12 flex items-center justify-center border-[var(--primary)] border-2 rounded-3xl text-2xl text-[var(--primary)] hover:bg-[var(--primary)]/25"
+          >
+            Resetuj
+          </button>
+        </div>
+      </div>
+      <div class="content mt-5 flex justify-around flex-wrap">
+        <div class="section">
+          <div class="section-name">NAZWA SEKCJI</div>
+          <div class="mb-5 flex flex-col w-full">
+            <div class="text-2xl text-left mb-2">Kategoria gleby:</div>
+            <select id="soilCategory" title="wybierz" class="w-full">
+              <option value="" selected hidden disabled>
+                wybierz kategorię
+              </option>
+              <option value="b_lekka">Bardzo lekka</option>
+              <option value="lekka">Lekka</option>
+              <option value="serednia">Średnia</option>
+              <option value="ciezka">Ciężka i b. ciężka</option>
+              <option value="b_ciezka">B. ciężka</option>
+            </select>
+          </div>
+          <div class="mb-5 flex flex-col w-full" id="needsSection">
+            <div class="text-2xl text-left mb-2">Potrzeby:</div>
+            <div
+              class="w-full font-bold flex flex-wrap gap-2 text-2xl justify-center"
+              id="needsButtons"
+            >
+              <button
+                class="border-2 p-1 px-2 rounded-2xl bg-[#7E340E]"
+                value="konieczne"
+              >
+                konieczne
+              </button>
+              <button
+                class="border-2 p-1 px-2 rounded-2xl bg-[#FFC000]"
+                value="potrzebne"
+              >
+                potrzebne
+              </button>
+              <button
+                class="border-2 p-1 px-2 rounded-2xl bg-[#FFFF00]"
+                value="wskazane"
+              >
+                wskazane
+              </button>
+              <button
+                class="border-2 p-1 px-2 rounded-2xl bg-[#00B050]"
+                value="ograniczone"
+              >
+                ograniczone
+              </button>
+              <button
+                class="border-2 p-1 px-2 rounded-2xl bg-[#0070C0]"
+                value="zbedne"
+              >
+                zbędne
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-5 flex flex-col w-full" id="phSection">
+            <div class="text-2xl text-left mb-2">Wartość pH:</div>
+            <div class="flex">
+              <input
+                type="text"
+                id="phValue"
+                placeholder="podaj wartość pH"
+                pattern="[0-9]*"
+                inputmode="numeric"
+              />
+              <div class="unit">pH</div>
+            </div>
+          </div>
+
+          <div class="mb-5 flex flex-col w-full">
+            <div class="text-2xl text-left mb-2">Zawartość CaO w wapnie:</div>
+            <div class="flex">
+              <input
+                type="text"
+                id="caoValue"
+                placeholder="podaj zawartość CaO"
+                pattern="[0-9]*"
+                inputmode="numeric"
+              />
+              <div class="unit">%</div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="text-2xl text-left">Zapotrzebowanie na CaO:</div>
+            <div
+              class="text-3xl mt-4 text-[var(--primary)] text-center"
+              id="result"
+            >
+              uzupełnij wartości
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="new-data.js"></script>
+  <script src="script.js"></script>
+</html>
