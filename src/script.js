@@ -156,6 +156,7 @@ function calculateCaO() {
     }
   } else if (selectedMethod === "DLG") {
     needSection.style.display = "none";
+    phSection.style.display = "block";
     if (soilCategoryDLG.value !== "" && phValue.value !== "") {
       const phString = phValueStringDLG(phValue.value);
       const found = soil_ph_DLG.find(
